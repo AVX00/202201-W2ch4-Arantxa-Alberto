@@ -58,3 +58,15 @@ class SkylabArray {
     return newArray;
   }
 }
+
+describe("Given a SkylabArray class", () => {
+  describe("When constructed with elements 56, 'hola', true", () => {
+    test("Then it should contain elements 56, 'hola', true in the data property and have a lenght of 3", () => {
+      const expectedValue = { length: 3, data: { 0: 56, 1: "hola", 2: true } };
+
+      const returnedValue = new SkylabArray(56, "hola", true);
+
+      expect(returnedValue).toEqual(expectedValue);
+    });
+  });
+});
