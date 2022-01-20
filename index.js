@@ -28,11 +28,31 @@ class SkylabArray {
     }
   }
 
-  find(condition) {
+  filter(condition) {
     const newArray = new SkylabArray();
     for (const i in this.data) {
       if (condition(this.data[i])) {
         newArray.push(this.data[i]);
+      }
+    }
+    return newArray;
+  }
+
+  find(condition) {
+    for (const i in this.data) {
+      if (condition(this.data[i])) {
+        return this.data[i];
+      }
+    }
+    return null;
+  }
+
+  map(modifier) {
+    const newArray = new SkylabArray();
+    for (const i in this.data) {
+      if (Object.hasOwnProperty.call(this.data, i)) {
+        const element = this.data[i];
+        newArray.push(modifier(element));
       }
     }
     return newArray;
