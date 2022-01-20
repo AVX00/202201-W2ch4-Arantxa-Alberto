@@ -15,7 +15,15 @@ class SkylabArray {
       this.length++;
     }
   }
+
+  find() {
+    for (const i in argumentos) {
+      if (valor === argumentos[i]) {
+        return argumentos[i];
+      }
+    }
+  }
 }
 
 const prova = new SkylabArray("hola", false, 90);
-console.log(prova, prova.push(76));
+console.log(prova, prova.find(false));
